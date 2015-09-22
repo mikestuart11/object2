@@ -2,11 +2,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class hashmap {
+public class HashMapSandbox {
 	public static void main(String[] args) {
 		// creates a new hashmap called map
 		// the key will be an integer and the value 
 		// will be a string
+		
+		// this is the happy path
 		HashMap<Integer, String> map = new HashMap<Integer, String>();
 		
 		map.put(1, "One");
@@ -15,15 +17,7 @@ public class hashmap {
 		map.put(4, "Four");
 		map.put(5, "Five");
 		map.put(6, "Six");
-		
-		
-		
-		Scanner input = new Scanner(System.in);
-		System.out.println("Please input a key: ");
-		Integer inputKey = input.nextInt(); 
-		String number = map.get(inputKey);
-		System.out.println("The number is " + number);
-		
+	
 		// this allows the keys and the values to be printed out 
 		// next to each other, sort of like a look up table
 		for(Map.Entry<Integer, String> entry: map.entrySet()) {
@@ -31,8 +25,21 @@ public class hashmap {
 			String value = entry.getValue();
 			
 			System.out.println(key + ": " + value);
-			
-			input.close();
 		}
+		
+		// nasty path value is null
+		map.put(7, null);
+		
+		System.out.println(map);
+		
+		
+		// nasty path key is null
+		map.put(null, "Test");
+		
+		System.out.println(map);
+		
+		// nasty path use get for a key that doesn't exist
+		String result = map.get(45);
+		System.out.println(result);
 	}
 }
