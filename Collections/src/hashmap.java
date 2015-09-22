@@ -31,6 +31,8 @@ public class hashmap {
 			String value = entry.getValue();
 			
 			System.out.println(key + ": " + value);
+			
+			input.close();
 		}
 	}
 }
