@@ -13,6 +13,7 @@ public class enumMapSandbox {
     public static void main(String[] args) {
 
         /*happy path -------------------------------------------------------------------------------------------------*/
+        // this adds an enum map of the enums that I created and then adds keys and values to the enumMap
         EnumMap<STATE, String> stateMap = new EnumMap<STATE, String>(STATE.class);
 
         stateMap.put(STATE.RUNNING, "Program is running");
