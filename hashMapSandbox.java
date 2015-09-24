@@ -23,15 +23,27 @@ public class hashMapSandbox {
         }
 
         // nasty path value is null
-        map.put(7, null);
-        System.out.println(map);
+        try {
+            map.put(7, null);
+            System.out.println(map);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // nasty path key is null
-        map.put(null, "Test");
-        System.out.println(map);
+        try {
+            map.put(null, "Test");
+            System.out.println(map);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // nasty path use get for a key that doesn't exist
-        String result = map.get(45);
-        System.out.println(result);
+        try {
+            String result = map.get(45);
+            System.out.println(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
