@@ -1,3 +1,5 @@
+package com.mike.stuart;
+
 import java.util.EnumMap;
 import java.util.Iterator;
 
