@@ -38,6 +38,17 @@ public class testThingSandbox implements Serializable {
         } catch (JSONException e) {
             e.printStackTrace();
         } // this will print out the object but will leave out the null value
+
+        // nasty path
+        // this is more testing the personBean class but I wanted to see if it would
+        // still work
+        personBean newBean3 = new personBean(null, null, 0);
+        try {
+            String jsonString2 = JSONUtilities.stringify(newBean2);
+            System.out.println(jsonString2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } // nothing is printed out to the console at all
     }
 }
 
