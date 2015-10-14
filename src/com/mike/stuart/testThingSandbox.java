@@ -1,5 +1,6 @@
 package com.mike.stuart;
 
+import org.quickconnectfamily.json.JSONException;
 import org.quickconnectfamily.json.JSONUtilities;
 import java.io.Serializable;
 
@@ -8,27 +9,27 @@ import java.io.Serializable;
  */
 public class testThingSandbox implements Serializable {
 
-    protected String firstName;
-    protected String lastName;
-    protected String address;
-    protected int age;
-
-    public testThingSandbox(String aFirstName, String aLastName, String aAddress, int aAge) {
-        firstName = aFirstName;
-        lastName = aLastName;
-        address = aAddress;
-        age = aAge;
-    }
-
     public static void main(String[] args) {
-        testThingSandbox anInstance = new testThingSandbox("Mike", "Stuart", "246 Walnut Ave", 25);
-            try {
-                String jsonString = JSONUtilities.stringify(anInstance);
-                System.out.println(jsonString);
-            }
-            catch(Exception e) {
-                e.printStackTrace();
-            }
+        // happy path
+        // give the stringify class a correct object and prints it out
+        personBean newBean = new personBean("Mike", "Stuart", 25);
+        try {
+            String jsonString = JSONUtilities.stringify(newBean);
+            System.out.println(jsonString);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } // this will output the object information in JSON format
+
+        // nasty path
+        // put in null for the stringify class then print it out
+        try {
+            String jsonString2 = JSONUtilities.stringify(null);
+            System.out.println(jsonString2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } // this will output a null value
+
+
     }
 }
 
