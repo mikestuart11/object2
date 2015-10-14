@@ -29,7 +29,15 @@ public class testThingSandbox implements Serializable {
             e.printStackTrace();
         } // this will output a null value
 
-
+        // nasty path
+        // try to parse an object that has a null value in it
+        personBean newBean2 = new personBean("Robert", null, 65);
+        try {
+            String jsonString2 = JSONUtilities.stringify(newBean2);
+            System.out.println(jsonString2);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } // this will print out the object but will leave out the null value
     }
 }
 
