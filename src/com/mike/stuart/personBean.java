@@ -1,6 +1,7 @@
 package com.mike.stuart;
 
 import java.io.Serializable;
+import java.util.HashMap;
 
 /**
  * Created by Mike on 10/7/2015.
@@ -19,8 +20,14 @@ public class personBean implements Serializable {
         this.lastName = lastName;
         this.age = age;
     }
-    //getters and setters
+    // constructor to accept a hashmap
+    public personBean(HashMap myHashMap) {
 
+        this.firstName = (String)myHashMap.get("firstName");
+        this.lastName = (String)myHashMap.get("lastName");
+        this.age = Integer.parseInt((String)myHashMap.get("age"));
+    }
+    //getters and setters
     public String getFirstName() {
         return firstName;
     }

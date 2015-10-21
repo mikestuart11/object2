@@ -1,13 +1,8 @@
 package com.mike.stuart;
 
-import org.quickconnectfamily.json.JSONException;
-import org.quickconnectfamily.json.JSONOutputStream;
-import org.quickconnectfamily.json.JSONUtilities;
+import org.quickconnectfamily.json.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.HashMap;
 
 /**
@@ -49,6 +44,28 @@ public class convertJSONtoString implements Serializable {
             }
 
         } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        /**********************************************************************************************************
+        * This should read from a file called test2.txt and inside this file there is a personBean object in JSON
+        * format. This should read that information and then parse it into strings so it can be used to make a
+        * personBean object.
+        *
+        **********************************************************************************************************/
+
+        String fileName = "test2.txt";
+
+        try {
+            FileInputStream objectFileStream = new FileInputStream(fileName);
+            JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
+            HashMap richardRobertsHashMap = (HashMap)jsonIn.readObject();
+            personBean richardRobers = new personBean(richardRobertsHashMap);
+            richardRobers.toString();
+            jsonIn.close();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
