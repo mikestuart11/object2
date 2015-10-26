@@ -55,13 +55,29 @@ public class convertJSONtoString implements Serializable {
         **********************************************************************************************************/
 
         String fileName = "test2.txt";
-
+        // Happy Path
+        // this reads in the file and turns it into a personBean
         try {
             FileInputStream objectFileStream = new FileInputStream(fileName);
             JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
             HashMap richardRobertsHashMap = (HashMap)jsonIn.readObject();
             personBean richardRobers = new personBean(richardRobertsHashMap);
-            richardRobers.toString();
+            System.out.println("Happy Path: " + richardRobers.toString());
+            jsonIn.close();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Nasty Path
+        //
+        try {
+            FileInputStream objectFileStream = new FileInputStream(fileName);
+            JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
+            HashMap richardRobertsHashMap = (HashMap)jsonIn.readObject();
+
+            System.out.println("Nasty Path 1: " + richardRobertsHashMap);
             jsonIn.close();
         } catch (JSONException e) {
             e.printStackTrace();

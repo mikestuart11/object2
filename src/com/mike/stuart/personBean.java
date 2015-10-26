@@ -5,6 +5,9 @@ import java.util.HashMap;
 
 /**
  * Created by Mike on 10/7/2015.
+ * This class creates a Java Bean called personBean. It has 3 elements, firstName, lastName and age. There is a default
+ * constructor, a constructor that accepts 2 strings and a integer, another constructor accepts a hashmap. This creates
+ * a personBean object.
  */
 public class personBean implements Serializable {
     private String firstName;
