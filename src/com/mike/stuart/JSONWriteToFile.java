@@ -11,42 +11,65 @@ import java.util.HashMap;
 public class JSONWriteToFile implements Serializable {
 
     public static void main(String[] args) {
-        // this creates a JSON string with three elements, theFirstName, theLastName, and theAge
-        String jsonString =
-                "{\"theFirstName\":\"Tyler\"" +
-                ",\"theLastName\":\"Roberts\"" +
-                ",\"theAge\":\"25\"}";
 
+        personBean aPersonBean = new personBean("Mike", "Stuart", 25);
+
+        // Happy Path---------------------------------------------------------------------------------------------------
+        System.out.println("Happy Path 1: ");
+
+            File testHashMapFile = new File("testHashMap.txt");
         try {
-            // this creates a hashmap and parses the JSON string into it
-            HashMap aMap = (HashMap)JSONUtilities.parse(jsonString);
-            // this prints out the hashmap to the console, you'll notice that it's out of order
-            // this is because hashmaps don't care what order things are in
-            System.out.println(aMap);
-            // this gets the values from the hashmap and parses them
-            // into variables to later be put into a bean
-            String firstName = (String)aMap.get("theFirstName");
-            String lastName = (String)aMap.get("theLastName");
-            int age = Integer.parseInt((String)aMap.get("theAge"));
-            // I take the parsed strings and ints and put them into a bean
-            personBean newBean3 = new personBean(firstName, lastName, age);
-            // I create a file to send all of the information to
-            File aFile = new File("test.txt");
-
-            try {
-                // this wraps a jsonoutputstream in a fileoutputstream
-                FileOutputStream aFileStream = new FileOutputStream(aFile);
-                JSONOutputStream jsonOut = new JSONOutputStream(aFileStream);
-                jsonOut.writeObject(newBean3);
-                jsonOut.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-
-        } catch (JSONException e) {
+            FileOutputStream aFileStream = new FileOutputStream(testHashMapFile);
+            JSONOutputStream jsonOut = new JSONOutputStream(aFileStream);
+            jsonOut.writeObject(aPersonBean);
+            System.out.println(aPersonBean);
+            jsonOut.close();
+        } catch (FileNotFoundException|JSONException e) {
             e.printStackTrace();
-        }
+        } // this writes the object to a file
 
+        // Nasty Path 1 ------------------------------------------------------------------------------------------------
+        // write null to a file
+        System.out.println("Nasty Path 1: ");
+        File testNullObjectFile = new File("testNullObject.txt");
+        try {
+            FileOutputStream aFileStream = new FileOutputStream(testNullObjectFile);
+            JSONOutputStream jsonOut = new JSONOutputStream(aFileStream);
+            jsonOut.writeObject(null);
+            System.out.println(aPersonBean);
+            jsonOut.close();
+        } catch (FileNotFoundException|JSONException e) {
+            e.printStackTrace();
+        } // this writes nothing to a file
+
+        // Nasty Path 2 ------------------------------------------------------------------------------------------------
+        // write to a file that already exists
+        System.out.println("Nasty Path 2: ");
+        File copyOverAFileTestFile = new File("copyOverAFileTest.txt");
+        try {
+            FileOutputStream aFileStream = new FileOutputStream(copyOverAFileTestFile);
+            JSONOutputStream jsonOut = new JSONOutputStream(aFileStream);
+            jsonOut.writeObject(null);
+            System.out.println(aPersonBean);
+            jsonOut.close();
+        } catch (FileNotFoundException|JSONException e) {
+            e.printStackTrace();
+        } // this writes over the file
+
+
+        // Nasty Path 3 ------------------------------------------------------------------------------------------------
+        // write out to a file and you don't have write permissions to the directory
+        System.out.println("Nasty Path 3: ");
+        File writeToFolderWithoutPermissionsFile = new File("C:/Users/Mike/Object2/testFolder/writeToFolderWithoutPermissions.txt");
+        try {
+            FileOutputStream aFileStream = new FileOutputStream(writeToFolderWithoutPermissionsFile);
+            JSONOutputStream jsonOut = new JSONOutputStream(aFileStream);
+            jsonOut.writeObject(null);
+            System.out.println(aPersonBean);
+            jsonOut.close();
+        } catch (FileNotFoundException|JSONException e) {
+            e.printStackTrace();
+        } // it would not allow me to write to the file because of access denied
 
 
     }

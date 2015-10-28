@@ -82,6 +82,23 @@ public class JSONReadFromFile {
             e.printStackTrace();
         }
 
+        // Nasty Path 4
+        // put in a negative int into jsoninputstream
+        System.out.println("Nasty Path 4: ");
+        String fileName2 = "test2.json";
+        try {
+            FileInputStream objectFileStream = new FileInputStream(fileName2);
+            JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
+            HashMap test1HashMap = (HashMap)jsonIn.readObject();
+            System.out.println("Output :" + test1HashMap);
+            jsonIn.close();
+        } catch (JSONException|IOException e) {
+            e.printStackTrace();
+        }
+
+// read from a file that doesn't exist
+        // read from a file that isn't a json file
+        // read from a file and you don't have read permissions
 
     }
 }

@@ -3,7 +3,6 @@ package com.mike.stuart;
 import org.quickconnectfamily.json.JSONException;
 import org.quickconnectfamily.json.JSONUtilities;
 
-import java.io.File;
 import java.util.HashMap;
 
 /**
