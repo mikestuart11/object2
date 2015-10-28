@@ -69,18 +69,18 @@ public class JSONReadFromFile {
 
         // Nasty Path 3
         // put in a negative int into jsoninputstream
-//        System.out.println("Nasty Path 3: ");
-//
-//        try {
-//            FileInputStream objectFileStream = new FileInputStream(fileName);
-//            JSONInputStream jsonIn = new JSONInputStream(-1);
-//            HashMap test3HashMap = (HashMap) jsonIn.readObject();
-//
-//            System.out.println("Output: " + test3HashMap);
-//            jsonIn.close();
-//        } catch (JSONException|IOException e) {
-//            e.printStackTrace();
-//        }
+        System.out.println("Nasty Path 3: ");
+        String number = "-1";
+        try {
+            FileInputStream objectFileStream = new FileInputStream(fileName);
+            JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
+            HashMap test3HashMap = (HashMap) jsonIn.readObject();
+
+            System.out.println("Output: " + test3HashMap);
+            jsonIn.close();
+        } catch (JSONException|IOException e) {
+            e.printStackTrace();
+        }
 
 
     }

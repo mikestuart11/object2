@@ -8,7 +8,7 @@ import java.util.HashMap;
 /**
  * Created by Mike on 10/19/2015.
  */
-public class convertJSONtoString implements Serializable {
+public class JSONWriteToFile implements Serializable {
 
     public static void main(String[] args) {
         // this creates a JSON string with three elements, theFirstName, theLastName, and theAge
@@ -47,43 +47,7 @@ public class convertJSONtoString implements Serializable {
             e.printStackTrace();
         }
 
-        /**********************************************************************************************************
-        * This should read from a file called test2.txt and inside this file there is a personBean object in JSON
-        * format. This should read that information and then parse it into strings so it can be used to make a
-        * personBean object.
-        *
-        **********************************************************************************************************/
 
-        String fileName = "test2.txt";
-        // Happy Path
-        // this reads in the file and turns it into a personBean
-        try {
-            FileInputStream objectFileStream = new FileInputStream(fileName);
-            JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
-            HashMap richardRobertsHashMap = (HashMap)jsonIn.readObject();
-            personBean richardRobers = new personBean(richardRobertsHashMap);
-            System.out.println("Happy Path: " + richardRobers.toString());
-            jsonIn.close();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // Nasty Path
-        //
-        try {
-            FileInputStream objectFileStream = new FileInputStream(fileName);
-            JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
-            HashMap richardRobertsHashMap = (HashMap)jsonIn.readObject();
-
-            System.out.println("Nasty Path 1: " + richardRobertsHashMap);
-            jsonIn.close();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 }
