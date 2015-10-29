@@ -36,33 +36,33 @@ public class JSONReadFromFile {
             e.printStackTrace();
         }
 
-//        // Nasty Path 1 ----------------------------------------------------------------------------------------------
-//        // Putting a null filename into the file input stream
-//        System.out.println("Nasty Path 1: ");
-//        String nullFileName = null;
-//        try {
-//            FileInputStream objectFileStream = new FileInputStream(nullFileName);
-//            JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
-//            HashMap test2HashMap = (HashMap) jsonIn.readObject();
-//            System.out.println("Output: " + test2HashMap);
-//            jsonIn.close();
-//        } catch (JSONException|IOException e) {
-//            e.printStackTrace();
-//        } // this passes errors
+        // Nasty Path 1 ----------------------------------------------------------------------------------------------
+        // Putting a null filename into the file input stream
+        System.out.println("Nasty Path 1: ");
+        String nullFileName = null;
+        try {
+            FileInputStream objectFileStream = new FileInputStream(nullFileName);
+            JSONInputStream jsonIn = new JSONInputStream(objectFileStream);
+            HashMap test2HashMap = (HashMap) jsonIn.readObject();
+            System.out.println("Output: " + test2HashMap);
+            jsonIn.close();
+        } catch (JSONException|IOException e) {
+            e.printStackTrace();
+        } // this passes errors
 
-//        // Nasty Path 2 ------------------------------------------------------------------------------------------------
-//        // if a null is put into the jsoninputstream
-//        System.out.println("Nasty Path 2: ");
-//        try {
-//            FileInputStream objectFileStream = new FileInputStream(fileName);
-//            JSONInputStream jsonIn = new JSONInputStream(null);
-//            HashMap test3HashMap = (HashMap) jsonIn.readObject();
-//
-//            System.out.println("Output: " + test3HashMap);
-//            jsonIn.close();
-//        } catch (JSONException|IOException e) {
-//            e.printStackTrace();
-//        } // this passes errors
+        // Nasty Path 2 ------------------------------------------------------------------------------------------------
+        // if a null is put into the jsoninputstream
+        System.out.println("Nasty Path 2: ");
+        try {
+            FileInputStream objectFileStream = new FileInputStream(fileName);
+            JSONInputStream jsonIn = new JSONInputStream(null);
+            HashMap test3HashMap = (HashMap) jsonIn.readObject();
+
+            System.out.println("Output: " + test3HashMap);
+            jsonIn.close();
+        } catch (JSONException|IOException e) {
+            e.printStackTrace();
+        } // this passes errors
 
         // Nasty Path 3 ------------------------------------------------------------------------------------------------
         // put in a negative int into jsoninputstream
