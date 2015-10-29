@@ -1,4 +1,4 @@
-package com.mike.stuart;
+package com.mike.stuart.Collections;
 
 import java.util.HashMap;
 import java.util.Map;

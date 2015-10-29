@@ -1,4 +1,5 @@
-package com.mike.stuart;
+package com.mike.stuart.JSON;
+import com.mike.stuart.personBean;
 import org.quickconnectfamily.json.JSONException;
 import org.quickconnectfamily.json.JSONUtilities;
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package com.mike.stuart;
+package com.mike.stuart.JSON;
 
 import org.quickconnectfamily.json.JSONException;
 import org.quickconnectfamily.json.JSONInputStream;
