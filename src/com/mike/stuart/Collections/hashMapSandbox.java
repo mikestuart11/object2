@@ -7,7 +7,6 @@ public class hashMapSandbox {
     public static void main(String[] args) {
 
         /***************************************************************************************************************
-         *
          * Happy Paths
          *
          * remove a key from the hashmap
@@ -17,7 +16,6 @@ public class hashMapSandbox {
          * use the value() method
          * use keySet() method
          * use entrySet() method
-         *
          * *************************************************************************************************************/
 
         // Happy path 1 ------------------------------------------------------------------------------------------------
@@ -79,7 +77,6 @@ public class hashMapSandbox {
         // this prints out a set of the keys and values in the hashmap
 
         /***************************************************************************************************************
-         *
          * Nasty Paths
          *
          * add value that is null
@@ -87,7 +84,6 @@ public class hashMapSandbox {
          * use get for a key that doesn't exist
          * remove a key that doesnt' exist from the hashmap
          * use the containsKey() method for a key that doesn't exist
-         *
          * *************************************************************************************************************/
 
         // Nasty path 1 ------------------------------------------------------------------------------------------------

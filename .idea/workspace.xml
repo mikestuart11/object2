@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f83e4758-585a-42a8-975d-b3510fb1d5a8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mike/stuart/Collections/hashMapSandbox.java" afterPath="$PROJECT_DIR$/src/com/mike/stuart/Collections/hashMapSandbox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mike/stuart/Collections/treeMapSandbox.java" afterPath="$PROJECT_DIR$/src/com/mike/stuart/Collections/treeMapSandbox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mike/stuart/Collections/treeSetSandbox.java" afterPath="$PROJECT_DIR$/src/com/mike/stuart/Collections/treeSetSandbox.java" />
     </list>
     <ignored path="Object2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,21 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hashMapSandbox.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hashMapSandbox.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/mike/stuart/Collections/hashMapSandbox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09550562">
-              <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="treeSetSandbox.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="treeSetSandbox.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/mike/stuart/Collections/treeSetSandbox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.36292136">
+              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -118,8 +117,8 @@
         <option value="$PROJECT_DIR$/src/com/mike/stuart/treeMapSandbox.java" />
         <option value="$PROJECT_DIR$/src/com/mike/stuart/JSON/JSONReadFromFile.java" />
         <option value="$PROJECT_DIR$/src/com/mike/stuart/Collections/treeMapSandbox.java" />
-        <option value="$PROJECT_DIR$/src/com/mike/stuart/Collections/treeSetSandbox.java" />
         <option value="$PROJECT_DIR$/src/com/mike/stuart/Collections/hashMapSandbox.java" />
+        <option value="$PROJECT_DIR$/src/com/mike/stuart/Collections/treeSetSandbox.java" />
       </list>
     </option>
   </component>
@@ -281,7 +280,7 @@
       <recent name="C:\Users\Mike\Object2\src\com\mike\stuart\JSON" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.treeMapSandbox">
+  <component name="RunManager" selected="Application.treeSetSandbox">
     <configuration default="false" name="objectToJSONString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -322,26 +321,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="JSONReadFromFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.mike.stuart.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.mike.stuart.JSON.JSONReadFromFile" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Object2" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="treeMapSandbox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -370,6 +349,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.mike.stuart.Collections.hashMapSandbox" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Object2" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="treeSetSandbox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.mike.stuart.Collections.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.mike.stuart.Collections.treeSetSandbox" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -634,17 +633,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.objectToJSONString" />
       <item index="1" class="java.lang.String" itemvalue="Application.JSONWriteToFile" />
-      <item index="2" class="java.lang.String" itemvalue="Application.JSONReadFromFile" />
-      <item index="3" class="java.lang.String" itemvalue="Application.treeMapSandbox" />
-      <item index="4" class="java.lang.String" itemvalue="Application.hashMapSandbox" />
+      <item index="2" class="java.lang.String" itemvalue="Application.treeMapSandbox" />
+      <item index="3" class="java.lang.String" itemvalue="Application.hashMapSandbox" />
+      <item index="4" class="java.lang.String" itemvalue="Application.treeSetSandbox" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.treeMapSandbox" />
-        <item index="1" class="java.lang.String" itemvalue="Application.hashMapSandbox" />
-        <item index="2" class="java.lang.String" itemvalue="Application.JSONWriteToFile" />
-        <item index="3" class="java.lang.String" itemvalue="Application.objectToJSONString" />
-        <item index="4" class="java.lang.String" itemvalue="Application.JSONReadFromFile" />
+        <item index="0" class="java.lang.String" itemvalue="Application.treeSetSandbox" />
+        <item index="1" class="java.lang.String" itemvalue="Application.treeMapSandbox" />
+        <item index="2" class="java.lang.String" itemvalue="Application.hashMapSandbox" />
+        <item index="3" class="java.lang.String" itemvalue="Application.JSONWriteToFile" />
+        <item index="4" class="java.lang.String" itemvalue="Application.objectToJSONString" />
       </list>
     </recent_temporary>
   </component>
@@ -663,12 +662,12 @@
       <workItem from="1445907680510" duration="1628000" />
       <workItem from="1446054262237" duration="7635000" />
       <workItem from="1446140433416" duration="3265000" />
-      <workItem from="1446488889752" duration="3881000" />
+      <workItem from="1446488889752" duration="5938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39673000" />
+    <option name="totallyTimeSpent" value="41730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
@@ -948,18 +947,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mike/stuart/Collections/treeSetSandbox.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mike/stuart/Collections/hashMapSandbox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/mike/stuart/Collections/hashMapSandbox.java">
+    <entry file="file://$PROJECT_DIR$/src/com/mike/stuart/Collections/treeSetSandbox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09550562">
-          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.36292136">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
           <folding />
         </state>
       </provider>
