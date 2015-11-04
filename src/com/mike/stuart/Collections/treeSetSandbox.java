@@ -36,7 +36,7 @@ public class treeSetSandbox {
         // create a treeSet and give it values that are Integers
         System.out.println("Happy Path 2: ");
         TreeSet treeSetIntegers = new TreeSet();
-        
+
         treeSetIntegers.add(7);
         treeSetIntegers.add(8);
         treeSetIntegers.add(9);
@@ -79,9 +79,42 @@ public class treeSetSandbox {
         /***************************************************************************************************************
          * Nasty Paths
          *
-         *
-         *
+         * try to add null value into a treeSet
+         * remove an element that doesn't exist
+         * add an element that already exists
          * *************************************************************************************************************/
 
+        TreeSet nastyTreeSet = new TreeSet();
+        nastyTreeSet.addAll(treeSetStrings);
+
+        // Nasty Path 1 ------------------------------------------------------------------------------------------------
+        // try to add null value into a TreeSet
+        System.out.println("Nasty Path 1: ");
+        try {
+            nastyTreeSet.add(null);
+            System.out.println(nastyTreeSet);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Error: NullPointerException
+
+        // Nasty Path 2 ------------------------------------------------------------------------------------------------
+        // Remove an element that doesn't exist
+        System.out.println("Nasty Path 2: ");
+        try {
+            nastyTreeSet.remove("notThere");
+            System.out.println(nastyTreeSet);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Nothing happened, no error was thrown
+
+        // Nasty Path 3 ------------------------------------------------------------------------------------------------
+        // Add an element that already exists
+        System.out.println("Nasty Path 3: ");
+        try {
+            nastyTreeSet.add("Is");
+            System.out.println(nastyTreeSet);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // no error is thrown, no duplicate was added
     }
 }
