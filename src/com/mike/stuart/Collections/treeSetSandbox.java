@@ -15,6 +15,7 @@ public class treeSetSandbox {
          * create a treeSet and give it values that are integers
          * remove element from the treeSet
          * use addAll() method to add values from one treeSet to another treeSet
+         *
          * *************************************************************************************************************/
 
         // Happy Path 1 ------------------------------------------------------------------------------------------------
@@ -82,6 +83,7 @@ public class treeSetSandbox {
          * try to add null value into a treeSet
          * remove an element that doesn't exist
          * add an element that already exists
+         *
          * *************************************************************************************************************/
 
         TreeSet nastyTreeSet = new TreeSet();

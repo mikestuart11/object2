@@ -16,6 +16,7 @@ public class hashMapSandbox {
          * use the value() method
          * use keySet() method
          * use entrySet() method
+         *
          * *************************************************************************************************************/
 
         // Happy path 1 ------------------------------------------------------------------------------------------------
@@ -84,6 +85,7 @@ public class hashMapSandbox {
          * use get for a key that doesn't exist
          * remove a key that doesnt' exist from the hashmap
          * use the containsKey() method for a key that doesn't exist
+         *
          * *************************************************************************************************************/
 
         // Nasty path 1 ------------------------------------------------------------------------------------------------

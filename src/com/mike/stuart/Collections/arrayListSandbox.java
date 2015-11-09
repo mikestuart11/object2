@@ -18,6 +18,7 @@ public class arrayListSandbox {
          * use the clear() method to clear all elements in the arrayList
          * use the subList() method, which returns a sebset of the arrayList
          * use the isEmpty() method
+         *
          * *************************************************************************************************************/
 
         // Happy Path 1 ------------------------------------------------------------------------------------------------
@@ -71,6 +72,7 @@ public class arrayListSandbox {
          * remove element that is out of bounds
          * using indexOf() method to ask for index that doesn't exist
          * use the get() method to return an element that is out of bounds
+         *
          * *************************************************************************************************************/
 
         ArrayList nastyArrayList = new ArrayList();
