@@ -72,7 +72,8 @@ public class arrayListSandbox {
          * remove element that is out of bounds
          * using indexOf() method to ask for index that doesn't exist
          * use the get() method to return an element that is out of bounds
-         *
+         * use get() on negative number
+         * join two lists and pass null
          * *************************************************************************************************************/
 
         ArrayList nastyArrayList = new ArrayList();
@@ -131,5 +132,24 @@ public class arrayListSandbox {
         } catch (Exception e) {
             e.printStackTrace();
         } // Exception: IndexOutOfBoundsException
+
+        // Nasty Path 6 ------------------------------------------------------------------------------------------------
+        // use the get() method using a negative index
+        System.out.println("Nasty Path 6: ");
+        try {
+            System.out.println(nastyArrayList.get(-4));
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Exception: ArrayIndexOutOfBoundsException
+
+        // Nasty Path 7 ------------------------------------------------------------------------------------------------
+        // try to merge two arrayLists and pass it null
+        System.out.println("Nasty Path 7: ");
+        try {
+            nastyArrayList.addAll(null);
+            System.out.println(nastyArrayList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Exception: NullPointerException
     }
 }

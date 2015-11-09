@@ -1,6 +1,7 @@
 package com.mike.stuart.Collections;
 
 import java.util.TreeSet;
+import com.mike.stuart.personBean;
 
 /**
  * Created by Mike on 11/2/2015.
@@ -83,6 +84,8 @@ public class treeSetSandbox {
          * try to add null value into a treeSet
          * remove an element that doesn't exist
          * add an element that already exists
+         * treeset that accepts ints and then add stings
+         * add javabean to a treeset
          *
          * *************************************************************************************************************/
 
@@ -118,5 +121,38 @@ public class treeSetSandbox {
         } catch (Exception e) {
             e.printStackTrace();
         } // no error is thrown, no duplicate was added
+
+        // Nasty Path 4 ------------------------------------------------------------------------------------------------
+        // create treeSet that accepts ints and then pass it a string
+        System.out.println("Nasty Path 4: ");
+
+        TreeSet integerTreeSet = new TreeSet();
+        integerTreeSet.add(45);
+        integerTreeSet.add(46);
+        integerTreeSet.add(47);
+        integerTreeSet.add(48);
+        integerTreeSet.add(49);
+        integerTreeSet.add(50);
+
+        try {
+            integerTreeSet.add("test string");
+            System.out.println(integerTreeSet);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Error: Integer cannot be cast to java.lang.String
+
+        // Nasty Path 5 ------------------------------------------------------------------------------------------------
+        // add javaBean to a treeSet
+        System.out.println("Nasty Path 5: ");
+
+        personBean robertSanders = new personBean("Robert", "Sanders", 45);
+
+        try {
+            integerTreeSet.add(robertSanders);
+            System.out.println(integerTreeSet);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Error: personBean cannot be cast to java.lang.Comparable, there needs to be a comparable
+
     }
 }
