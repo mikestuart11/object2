@@ -22,7 +22,6 @@ public class nastyThreadSandbox extends Thread {
                     System.out.println("Thread 1: Holding for Strings 1 & 2");
                 }
             }
-
         }
     };
 
@@ -40,7 +39,6 @@ public class nastyThreadSandbox extends Thread {
                     System.out.println("Thread 2: Holding for Strings 1 & 2");
                 }
             }
-
         }
     };
 
@@ -51,6 +49,5 @@ public class nastyThreadSandbox extends Thread {
 
         nastyThread1.thread1.start();
         nastyThread2.thread2.start();
-
     }
 }
