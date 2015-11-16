@@ -9,28 +9,40 @@ import java.util.concurrent.Executors;
 public class threadPoolSandbox {
 
     public static void main(String[] args) {
-        Executor mySecondExecutor = Executors.newCachedThreadPool();
         System.out.println("-----------------------Begin First Thread----------------------------------");
-        for (int i = 0; i < 5; i++) {
-            try {
-                Thread.currentThread().sleep(10);
-                System.out.println("First Thread Done Sleeping");
-                runnableSandbox myRunnable = new runnableSandbox();
-                mySecondExecutor.execute(myRunnable);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        Executor mySecondExecutor = Executors.newCachedThreadPool();
+
+
+        mySecondExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 5; i++) {
+                    try {
+                        Thread.currentThread().sleep(10);
+                        System.out.println("First Thread Done Sleeping");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
 
-        }
-        try {
-            Thread.currentThread().sleep(10);
-            System.out.println("-----------------------Second Thread Done Sleeping----------------------------------");
-            for (int j = 0; j < 5; j++) {
-                secondRunnableSandbox mySecondRunnable = new secondRunnableSandbox();
-                mySecondExecutor.execute(mySecondRunnable);
+        });
+        mySecondExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 5; i++) {
+                    try {
+                        Thread.currentThread().sleep(10);
+                        System.out.println("First Thread Done Sleeping");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        });
     }
+
 }
+
+

@@ -1,95 +1,196 @@
-package test.com.mike.stuart; 
+package test.com.mike.stuart;
 
-import org.junit.Test; 
-import org.junit.Before; 
-import org.junit.After; 
+import com.mike.stuart.personBean;
+import org.junit.*;
 
-/** 
-* personBean Tester. 
-* 
-* @author <Mike Stuart>
-* @since <pre>Nov 9, 2015</pre> 
-* @version 1.0 
-*/ 
-public class personBeanTest { 
+import static org.junit.Assert.*;
+import java.lang.reflect.Field;
 
-@Before
-public void before() throws Exception { 
-} 
+/***********************************************************************************************************************
+ * personBean Tester.
+ *
+ * @author <Mike Stuart>
+ * @since <pre>Nov 9, 2015</pre>
+ * @version 1.0
+ *
+ * Asserts Used:
+ * assertNotNull
+ * assertEquals
+ * assertFalse
+ * assertTrue
+ * assertArrayEquals
+ **********************************************************************************************************************/
+public class personBeanTest {
 
-@After
-public void after() throws Exception { 
-} 
+    @Before
+    public void before() throws Exception {
+    }
 
-/** 
-* 
-* Method: getFirstName() 
-* 
-*/ 
-@Test
-public void testGetFirstName() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @After
+    public void after() throws Exception {
+    }
 
-/** 
-* 
-* Method: setFirstName(String firstName) 
-* 
-*/ 
-@Test
-public void testSetFirstName() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @BeforeClass
+    public static void beforeClass() {
+    }
 
-/** 
-* 
-* Method: getLastName() 
-* 
-*/ 
-@Test
-public void testGetLastName() throws Exception { 
-//TODO: Test goes here... 
-} 
+    @AfterClass
+    public static void afterClass() {
+    }
 
-/** 
-* 
-* Method: setLastName(String lastName) 
-* 
-*/ 
-@Test
-public void testSetLastName() throws Exception { 
-//TODO: Test goes here... 
-} 
+    /*******************************************************************************************************************
+     *
+     * Method: getFirstName()
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void testGetFirstName() throws Exception {
+        // Create a personBean
+        personBean aPersonBean = new personBean("Mike", "Roberts", 78);
+        Field firstNameField = null;
 
-/** 
-* 
-* Method: getAge() 
-* 
-*/ 
-@Test
-public void testGetAge() throws Exception { 
-//TODO: Test goes here... 
-} 
+        try {
+            firstNameField = personBean.class.getDeclaredField("firstName");
+        } catch (NoSuchFieldException|SecurityException e) {
+            e.printStackTrace();
+        }
 
-/** 
-* 
-* Method: setAge(int age) 
-* 
-*/ 
-@Test
-public void testSetAge() throws Exception { 
-//TODO: Test goes here... 
-} 
+        firstNameField.setAccessible(true);
 
-/** 
-* 
-* Method: toString() 
-* 
-*/ 
-@Test
-public void testToString() throws Exception { 
-//TODO: Test goes here... 
-} 
+        String aFirstName = null;
 
+        try {
+            aFirstName = (String)firstNameField.get(aPersonBean);
+        } catch (IllegalArgumentException|IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        assertNotNull(aFirstName);
+        assertEquals("Mike", aFirstName);
+    }
+
+    /*******************************************************************************************************************
+     *
+     * Method: setFirstName(String firstName)
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void testSetFirstName() throws Exception {
+        personBean aPersonBean = new personBean("Robert", "Francis", 34);
+
+        Field firstNameField = personBean.class.getDeclaredField("firstName");
+        firstNameField.setAccessible(true);
+        String aFirstName = (String)firstNameField.get(aPersonBean);
+        assertFalse(aFirstName == "Mike");
+    }
+
+    /*******************************************************************************************************************
+     *
+     * Method: getLastName()
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void testGetLastName() throws Exception {
+        personBean aPersonBean = new personBean("Robert", "Francis", 34);
+        Field lastNameField = null;
+        try {
+            lastNameField = personBean.class.getDeclaredField("lastName");
+        } catch (NoSuchFieldException|SecurityException e) {
+            e.printStackTrace();
+        }
+        lastNameField.setAccessible(true);
+        String aLastName = null;
+        try {
+            aLastName = (String)lastNameField.get(aPersonBean);
+        } catch (IllegalArgumentException|IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        assertNotNull(aLastName);
+        assertEquals("Francis",aLastName);
+    }
+
+    /*******************************************************************************************************************
+     *
+     * Method: setLastName(String lastName)
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void testSetLastName() throws Exception {
+        personBean aPersonBean = new personBean("Robert", "Francis", 34);
+        Field lastNameField = personBean.class.getDeclaredField("lastName");
+        lastNameField.setAccessible(true);
+        String aLastName = (String)lastNameField.get(aPersonBean);
+        assertFalse(aLastName == "Mike");
+    }
+
+    /*******************************************************************************************************************
+     *
+     * Method: getAge()
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void testGetAge() throws Exception {
+        personBean anotherPersonBean = new personBean("Joe", "Bob", 99);
+        Field ageField = personBean.class.getDeclaredField("age");
+        ageField.setAccessible(true);
+        Integer ageNum = (Integer)ageField.get(anotherPersonBean);
+        assertTrue(ageNum != 87);
+    }
+
+    /*******************************************************************************************************************
+     *
+     * Method: setAge(int age)
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void testSetAge() throws Exception {
+        personBean aPersonBean = new personBean("Robert", "Francis", 34);
+        Field ageField = personBean.class.getDeclaredField("age");
+        ageField.setAccessible(true);
+        Integer ageNum = (Integer)ageField.get(aPersonBean);
+        assertFalse(ageNum < 0 & ageNum > 100);
+    }
+
+    /*******************************************************************************************************************
+     *
+     * Method: toString()
+     *
+     ******************************************************************************************************************/
+    @Test
+    public void testToString() throws Exception {
+        personBean aPersonBean = new personBean("Robert", "Francis", 34);
+        Field firstNameField = personBean.class.getDeclaredField("firstName");
+        firstNameField.setAccessible(true);
+        String aFirstName = (String)firstNameField.get(aPersonBean);
+        assertFalse(aFirstName == "");
+    }
+
+    /*******************************************************************************************************************
+     *
+     * Methods to Ignore:
+     *
+     ******************************************************************************************************************/
+
+    @Ignore
+    public void testGetAgeIgnore() throws Exception {
+        personBean anotherPersonBean = new personBean("Joe", "Bob", 99);
+        Field ageField = personBean.class.getDeclaredField("age");
+        ageField.setAccessible(true);
+        String anAge = (String)ageField.get(anotherPersonBean);
+        Integer ageNum = Integer.parseInt(anAge);
+        assertTrue(anAge == null);
+    }
+
+    /*******************************************************************************************************************
+     *
+     * Method: testArray()
+     *
+     ******************************************************************************************************************/
+
+    @After
+    public void testArray() throws Exception {
+        Integer[] numberList = {1,2,3,4,5,6,7,8,9,10};
+        Integer[] secondNumberList = {1,2,3,4,5,6,7,8,9,10};
+        assertArrayEquals(numberList, secondNumberList);
+    }
 
 } 
