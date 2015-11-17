@@ -14,11 +14,15 @@ import java.lang.reflect.Field;
  * @version 1.0
  *
  * Asserts Used:
- * assertNotNull
- * assertEquals
- * assertFalse
- * assertTrue
- * assertArrayEquals
+ * --------------------------------
+ * assertNotNull()
+ * assertEquals()
+ * assertFalse()
+ * assertTrue()
+ * assertArrayEquals()
+ * assertNull()
+ * assertSame()
+ * assertNotSame()
  **********************************************************************************************************************/
 public class personBeanTest {
 
@@ -46,19 +50,15 @@ public class personBeanTest {
     @Test
     public void testGetFirstName() throws Exception {
         // Create a personBean
-        personBean aPersonBean = new personBean("Mike", "Roberts", 78);
+        personBean aPersonBean = new personBean("Mike", null, 78);
         Field firstNameField = null;
-
         try {
             firstNameField = personBean.class.getDeclaredField("firstName");
         } catch (NoSuchFieldException|SecurityException e) {
             e.printStackTrace();
         }
-
         firstNameField.setAccessible(true);
-
         String aFirstName = null;
-
         try {
             aFirstName = (String)firstNameField.get(aPersonBean);
         } catch (IllegalArgumentException|IllegalAccessException e) {
@@ -66,6 +66,16 @@ public class personBeanTest {
         }
         assertNotNull(aFirstName);
         assertEquals("Mike", aFirstName);
+
+        Field lastNameField = null;
+        lastNameField = personBean.class.getDeclaredField("lastName");
+        lastNameField.setAccessible(true);
+        String aLastName = (String)lastNameField.get(aPersonBean);
+        assertNull(aLastName);
+        assertSame(null, aLastName);
+        assertNotSame(null, aFirstName);
+
+//        fail("This is suppose to represent something that we know is going to fail.");
     }
 
     /*******************************************************************************************************************
@@ -178,6 +188,8 @@ public class personBeanTest {
         String anAge = (String)ageField.get(anotherPersonBean);
         Integer ageNum = Integer.parseInt(anAge);
         assertTrue(anAge == null);
+
+        fail("This is supposed to fail.");
     }
 
     /*******************************************************************************************************************
