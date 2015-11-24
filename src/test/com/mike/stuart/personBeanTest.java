@@ -74,7 +74,13 @@ public class personBeanTest {
         assertNull(aLastName);
         assertSame(null, aLastName);
         assertNotSame(null, aFirstName);
+        try {
+            String nothing = null;
+            nothing.charAt(7);
+            fail("Should have thrown null pointer exception.");
+        } catch (Exception e) {
 
+        }
 //        fail("This is suppose to represent something that we know is going to fail.");
     }
 
