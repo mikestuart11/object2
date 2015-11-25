@@ -1,4 +1,4 @@
-package com.mike.stuart;
+package com.mike.stuart.JavaBeans;
 
 import com.mike.stuart.JavaBeans.personBean;
 
