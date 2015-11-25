@@ -1,8 +1,8 @@
 package com.mike.stuart.JSON;
-import com.mike.stuart.personBean;
+import com.mike.stuart.JavaBeans.personBean;
 import org.quickconnectfamily.json.JSONException;
 import org.quickconnectfamily.json.JSONUtilities;
-import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TreeSet;

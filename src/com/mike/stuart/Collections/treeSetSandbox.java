@@ -1,7 +1,7 @@
 package com.mike.stuart.Collections;
 
 import java.util.TreeSet;
-import com.mike.stuart.personBean;
+import com.mike.stuart.JavaBeans.personBean;
 
 /**
  * Created by Mike on 11/2/2015.

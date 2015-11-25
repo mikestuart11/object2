@@ -1,10 +1,9 @@
 package com.mike.stuart.JSON;
 
-import com.mike.stuart.personBean;
+import com.mike.stuart.JavaBeans.personBean;
 import org.quickconnectfamily.json.*;
 
 import java.io.*;
-import java.util.HashMap;
 
 /**
  * Created by Mike on 10/19/2015.
