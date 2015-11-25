@@ -23,7 +23,7 @@ public class ViewClass extends JFrame {
         JPanel carCreationPanel = new JPanel();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(600, 200);
+        this.setSize(400, 160);
 
         carCreationPanel.add(enterCarMake);
         carCreationPanel.add(carMake);
