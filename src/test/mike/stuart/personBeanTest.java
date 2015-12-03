@@ -1,4 +1,4 @@
-package test.com.mike.stuart;
+package test.mike.stuart;
 
 import mike.stuart.JavaBeans.personBean;
 import org.junit.*;
