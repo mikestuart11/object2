@@ -1,6 +1,6 @@
 package test.com.mike.stuart;
 
-import com.mike.stuart.JavaBeans.personBean;
+import mike.stuart.JavaBeans.personBean;
 import org.junit.*;
 
 import static org.junit.Assert.*;
